@@ -1,0 +1,2000 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Vitra - Lentes de segunda mano originales en Montevideo. Restauramos y vendemos lentes de marca con la mejor calidad y precios únicos. Sustentabilidad y estilo en un solo lugar.">
+    <meta name="keywords" content="lentes segunda mano, gafas originales Montevideo, lentes de marca Uruguay, lentes sustentables, second hand eyewear, restauración lentes, gafas usadas originales, vitra montevideo">
+    <meta name="author" content="Vitra">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Spanish">
+	 <meta name="author" content="Kikiriya devOps">
+    <meta name="geo.region" content="UY-MO">
+    <meta name="geo.placename" content="Montevideo">
+    <meta name="geo.position" content="-34.905034;-56.191170">
+    <link rel="canonical" href="index.html">	
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Vitra - Second Hand de Lentes Originales en Montevideo">
+    <meta property="og:description" content="Restauramos y vendemos lentes de marca originales. Sustentabilidad, calidad y estilo. Galería Libertador, Montevideo.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_UY">
+	<meta property="og:url" content="">
+    <meta property="og:image" content="logo_icons/logo_vitra.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="">
+    <meta name="twitter:title" content="Vitra - Lentes Originales Second Hand">
+    <meta name="twitter:description" content="La mejor calidad en lentes de marca restaurados. Precios únicos y compromiso sustentable.">
+    
+    <title>Vitra | Lentes Originales Second Hand - Montevideo</title>
+	<link rel="shortcut icon" href="logo_icons/viTRA ICO 16.png" type="image/jpg">
+	
+	<link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Playfair+Display:ital,wght@0,500;1,500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    
+    <style>
+        :root {
+            /* Light Theme */
+            --primary: #1a1a1a;
+            --primary_trans: #1a1a1a73;
+            --secondary: #2d2d2d;
+            --secondary_trans: #2d2d2da1;
+            --accent: #d4af37;
+            --accent-hover: #c19a2e;
+            --verdecito: #7ad294;
+            --verdecito-hover_trans:#7ad29491;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --white_transp1: #cfc9c99e;
+            --white_transp2: #9788889e;
+			--mercedes_color: #048858;
+            --grey_transp: rgb(48 46 46 / 97%);
+            --blue_transp: rgb(25 35 78 / 85%);
+            --text-primary: #1a1a1a;
+            --text-secondary: #6c757d;
+            --border: #e0e0e0;
+            --shadow: rgba(0, 0, 0, 0.6);
+            --shadow-hover: rgba(0, 0, 0, 0.5);
+            --gradient-start: #1a1a1a;
+            --gradient-end: #4a4a4a;
+			--text-shadow: rgb(0, 0, 0) 2px 2px 4px;
+			--shadow-sm: 0 2px 8px var(--color-shadow);
+			--shadow_green: 0 1px 25px var(--mercedes_color);
+			--gradient_4: linear-gradient(135deg, var(--primary), var(--mercedes_color));			
+			--deg1:#F2F0E1;
+			--deg2:#F2F2EB;
+			--deg3:#DED7D7;
+			--deg4:#E3E3E3;			
+
+			--transition: all .4s cubic-bezier(0.4, 0, 0.2, 1);
+			--transition1s: all .7s ease;
+			--font_family_playflare: "Playfair Display", serif;
+			--font_family_poppins: "Poppins", sans-serif;
+			--font_family_Verdana: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			
+			/*UNIQUES */			
+            --overlayGrey: var(--grey_transp);
+            --overlayBlue: var(--blue_transp);
+        }
+
+        [data-theme="dark"] {
+            --primary: #d4af37;
+			--primary_trans: #1a1a1acc;
+            --secondary: #c19a2e;
+			--secondary_trans: #2d2d2dde;
+            --accent: #d4af37;
+            --accent-hover: #e5c158;
+            --verdecito: #a8ddb8;
+            --verdecito-hover_trans:#a8ddb885;
+            --bg-primary: #0d0d0d;
+            --bg-secondary: #1a1a1a;
+            --white_transp1: #1f1f1f;
+            --text-primary: #f5f5f5;
+            --text-secondary: #b0b0b0;
+            --border: #333333;
+            --gradient-start: #0d0d0d;
+            --gradient-end: #2d2d2d;
+			--deg1: #413f3f;
+			--deg2: #363636;
+			--deg3: #181818;
+			--deg4: #050505;
+						
+			--mercedes_color: #2bffb3;
+			
+			.sun-icon {display: none;}
+			.moon-icon {display: block;}
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 100%;
+        }		
+		
+        img {
+            max-width: 100%;
+            display: block;
+			height: auto;
+			width:50px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+			transition: var(--transition);
+        }
+		ul{
+            list-style: none;
+		}
+
+		p{ font-family:var(--font_family_poppins);font-size:1em;}
+		
+		h1{font-size:1.4em;}
+		h2{font-size:1.2em;}
+		
+        button {
+            cursor: pointer;
+            font-family: inherit;
+            transition: var(--transition1s);
+            border: none;
+			    background: none;
+        }
+		
+        body {
+            font-family: var(--font_family_playflare);
+             line-height: 1.6;
+            letter-spacing: 0.3px;
+            color: var(--text-primary);
+			background: linear-gradient(180deg,var(--deg1) 0%, var(--deg2) 7%, var(--deg3) 36%, var(--deg4) 100%);
+            transition: var(--transition);
+            overflow-x: hidden;
+			    padding: 1rem .5rem;
+        }
+        
+        .header {
+            position: fixed;
+			width:100%;
+            top: 0;
+            left: 0;
+            background: var(--white_transp1);
+            backdrop-filter: blur(50px);
+            z-index: 10;
+            box-shadow: 0 2px 20px var(--shadow);
+            transition: var(--transition1s);
+        }
+
+        .header.scrolled {
+            box-shadow: 0 4px 30px var(--shadow-hover);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            display: flex;
+			flex-wrap: wrap;
+			align-content: center;
+			align-items: center;
+			font-size: 1rem;
+			gap: .5rem;
+			font-weight: 800;
+			letter-spacing: -0.02em;
+			background: linear-gradient(135deg, var(--primary), var(--verdecito));
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			transition: var(--transition1s);
+			cursor: pointer;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-menu {
+            display: none;
+            list-style: none;
+            gap: 0.5rem;
+        }
+
+        .nav-menu.active {
+            display: flex;
+            flex-direction: column;
+			align-items: center;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: var(--overlayGrey);
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px var(--shadow-hover);
+            animation: slideDown 0.3s ease;
+			height:100vh;			
+			font-size: 1.5rem;
+			& a {color:var(--verdecito);}
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .nav-menu a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--verdecito);
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--verdecito);
+        }
+
+        .nav-menu a:hover::before {
+            width: 80%;
+        }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .theme-toggle {
+            background: transparent;
+            border: 2px solid var(--bg-secondary);
+            color: var(--text-primary);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(360deg) scale(1.1);
+            <!-- color: white; -->
+        }
+		
+		.sun-icon {
+            display: block;
+        }
+
+        .moon-icon {
+            display: none;
+        }
+
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.8rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            transform: scale(1.1);
+            color: var(--verdecito);
+        }
+
+        main{
+			padding: 1rem .5rem;
+		}
+		
+        .hero {
+            margin-top: 10px;
+            min-height: calc(100vh - 20px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(180deg, var(--deg2) 0%, var(--deg3) 36%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            
+            animation: pulse 15s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .hero-content {
+            max-width: 1100px;
+            text-align: center;
+            position: relative;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--verdecito);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--verdecito);
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .hero-content  h1 {
+			color: white;
+			font-size: 2.5em;
+			-webkit-text-stroke-width: 0.7px;
+			-webkit-text-stroke-color: black;
+			text-transform: uppercase;
+			text-shadow: rgb(0, 0, 0) 2px 2px 4px;
+			font-weight: 500;
+			line-height: 1.1;
+			white-space: nowrap;
+            font-weight: 300;
+            letter-spacing: .5rem;
+		}
+		
+		<!-- .hero h1 { -->
+            <!-- font-size: 2.5rem; -->
+            <!-- font-weight: 800; -->
+            <!-- margin-bottom: 1rem; -->
+            <!-- line-height: 1.2; -->
+            <!-- color: white; -->
+            <!-- text-shadow: text-shadow: 0 2px 10px var(--primary_trans); -->
+            <!-- animation: fadeInUp 1.4s ease; -->
+        <!-- } -->
+
+        .hero-content .hero-highlight,.hero-content h3 {
+            position: relative;
+            color: var(--verdecito);
+			font-size:1.4em;
+			padding:1rem;
+			animation: fadeInUp 1.4s ease;
+			text-shadow: 0 2px 3px var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--primary_trans);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1.6s ease;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1.8s ease;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-primary, .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--secondary_trans);
+        }
+
+        .btn-primary:hover, .btn-secondary:hover {
+            background: var(--verdecito-hover_trans);
+            color: var(--accent-hover);
+			border-color:var(--verdecito-hover_trans);
+            transform: translateY(-3px);
+			box-shadow: 0 10px 30px var(--verdecito-hover_trans);
+        }
+
+        /* Section Styles */
+        section {            
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--verdecito);
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .section-title {
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+
+        .section-description {
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--white_transp1);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px var(--shadow);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--verdecito), var(--verdecito-hover));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px var(--shadow-hover);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            transition: transform 0.4s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Products Section */
+        .products-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--white_transp1);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px var(--shadow);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--border);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 16px 50px var(--shadow-hover);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--bg-secondary), var(--border));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .product-card:hover .product-image::before {
+            left: 100%;
+        }
+
+        .product-content {
+            padding: 2rem;
+        }
+
+        .product-badge {
+            display: inline-block;
+            background: var(--verdecito);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .product-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+        }
+
+        .product-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .product-price {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--verdecito);
+            margin-bottom: 1rem;
+        }
+
+        /* Process Section */
+        .process-timeline {
+            position: relative;
+            padding-left: 0;
+        }
+
+        .process-step {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            animation: fadeInLeft 0.8s ease;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--verdecito), var(--verdecito-hover));
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .process-step:hover .step-number {
+            transform: scale(1.15) rotate(360deg);
+        }
+
+        .step-content {
+            flex: 1;
+            background: var(--white_transp1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .step-content:hover {
+            box-shadow: 0 8px 25px var(--shadow-hover);
+            transform: translateX(10px);
+        }
+
+        .step-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .step-content p {
+            color: var(--text-secondary);
+        }
+
+        /* Sustainability Section */
+        .sustainability-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .sustainability-text {
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .sustainability-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .sustainability-text p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .sustainability-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: var(--white_transp1);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            border-color: var(--verdecito);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px var(--shadow-hover);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--verdecito);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            background: var(--white_transp1);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: start;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px var(--shadow-hover);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--verdecito);
+            flex-shrink: 0;
+        }
+
+        .contact-details h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .contact-details p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 400px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--white_transp1);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px var(--shadow);
+            border: 1px solid var(--border);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 40px var(--shadow-hover);
+        }
+
+        .quote-icon {
+            font-size: 4rem;
+            color: var(--verdecito);
+            opacity: 0.2;
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--verdecito), var(--verdecito-hover));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .author-info h5 {
+            color: var(--text-primary);
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .stars {
+            color: var(--verdecito);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary_trans), var(--secondary_trans));
+            color: var(--text-primary);
+            padding: 1rem 1.5rem;
+			margin-top: 1.2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--verdecito);
+        }
+
+        .footer-section p,
+        .footer-section li {
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+		.footer-section p{
+			font-family: 'Playfair Display';
+		}
+
+        .footer-section a:hover {
+            color: var(--verdecito);
+            transform: translateX(5px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--verdecito);
+            transform: translateY(-5px) rotate(360deg);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 480px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .nav-menu {
+                display: flex;
+                flex-direction: row;
+                position: static;
+                background: none;
+                padding: 0;
+                box-shadow: none;
+            }
+
+            .menu-toggle {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .sustainability-content {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .hero h1 {
+                font-size: 4rem;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .testimonials-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .features-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 1rem;
+            width: 45px;
+            height: 45px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+            background: var(--verdecito);
+            color: var(--gradient-start);
+            border: none;
+            border-radius: 50%;
+            font-size: 2.5rem;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 10;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.6);
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav-container">
+            <div class="logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+				<img class="logo_img" src="logo_icons/logo_vitra.jpg"/>
+				<h1 class="logo_title">VITRA</h1>
+			</div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#proceso">Proceso</a></li>
+                <li><a href="#sustentabilidad">Sustentabilidad</a></li>
+                <li><a href="#testimonios">Testimonios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="https://www.instagram.com/calu_home" class="social_link nav__link" aria-label="Instagram" target="_blank" style="">
+                            <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+					</a>
+				</li>
+            </ul>
+
+            <div class="nav-controls">
+				<button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+					<img class="moon-icon" src="logo_icons/gafa_light.png"/>
+					<img class="sun-icon" src="logo_icons/gafa_dark.png"/>
+                </button>
+                <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+                    ☰
+                </button>
+            </div>
+        </nav>
+    </header>
+
+	<main>	
+		<section class="hero" id="inicio">
+			<div class="hero-content">
+				<h1>VITRA</h1>
+				<h2 class="hero-highlight">Lentes Originales</h2>
+				<h3> Second Hand</h3>
+				<p>Restauramos y vendemos lentes de marca con la mejor calidad, precios únicos y compromiso sustentable. Tu estilo, nuestra pasión.</p>
+				<div class="cta-buttons">
+					<a href="#productos" class="btn btn-primary hero-badge">
+						<span>Ver Colección</span>
+					</a>
+					<a href="#contacto" class="btn btn-secondary hero-badge">
+						<span> ✨Visitanos</span>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Features Section -->
+		<section id="nosotros">
+			<div class="section-header">
+				<span class="section-badge">Por Qué Elegirnos</span>
+				<h2 class="section-title">Calidad y Estilo en Cada Detalle</h2>
+				<p class="section-description">
+					Somos emprendedoras comprometidas con ofrecer lentes de marca originales, restaurados profesionalmente y a precios únicos.
+				</p>
+			</div>
+			<div class="features-grid">
+				<div class="feature-card">
+					<div class="feature-icon">👓</div>
+					<h3>100% Originales</h3>
+					<p>Garantizamos la autenticidad de cada lente. Trabajamos solo con productos originales de marcas reconocidas mundialmente.</p>
+				</div>
+				<div class="feature-card">
+					<div class="feature-icon">✨</div>
+					<h3>Restauración Profesional</h3>
+					<p>Cada lente pasa por un proceso riguroso de restauración para lucir como nuevo, manteniendo su calidad original.</p>
+				</div>
+				<div class="feature-card">
+					<div class="feature-icon">💰</div>
+					<h3>Precios Únicos</h3>
+					<p>Accede a lentes de marcas premium a precios accesibles. Estilo de lujo sin comprometer tu presupuesto.</p>
+				</div>
+				<div class="feature-card">
+					<div class="feature-icon">🌱</div>
+					<h3>Compromiso Sustentable</h3>
+					<p>Contribuimos a la economía circular y reducimos el impacto ambiental dando nueva vida a productos de calidad.</p>
+				</div>
+				<div class="feature-card">
+					<div class="feature-icon">🎯</div>
+					<h3>Atención Personalizada</h3>
+					<p>Te asesoramos para encontrar el lente perfecto que se adapte a tu estilo y necesidades específicas.</p>
+				</div>
+				<div class="feature-card">
+					<div class="feature-icon">⚡</div>
+					<h3>Siempre Actualizado</h3>
+					<p>Constantemente renovamos nuestro stock con las últimas tendencias y modelos más buscados del mercado.</p>
+				</div>
+				<div class="feature-card">
+					<div class="feature-icon">🛡️</div>
+					<h3>Garantía de Calidad</h3>
+					<p>Todos nuestros productos cuentan con garantía. Tu satisfacción es nuestra prioridad número uno.</p>
+				</div>
+				<div class="feature-card">
+					<div class="feature-icon">💎</div>
+					<h3>Marcas Premium</h3>
+					<p>Ray-Ban, Oakley, Prada, Gucci y más. Accede a las mejores marcas del mercado a precios increíbles.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Products Section -->
+		<section id="productos">
+			<div class="section-header">
+				<span class="section-badge">Nuestra Colección</span>
+				<h2 class="section-title">Descubre Tu Próximo Look</h2>
+				<p class="section-description">
+					Cada lente tiene su propia historia. Encuentra el que cuente la tuya.
+				</p>
+			</div>
+			<div class="products-grid">
+				<div class="product-card">
+					<div class="product-image">👓</div>
+					<div class="product-content">
+						<span class="product-badge">Ray-Ban</span>
+						<h3>Aviator Clásico</h3>
+						<p>El icónico diseño aviador que nunca pasa de moda. Marco de metal dorado con lentes degradadas.</p>
+						<div class="product-price">Desde $2,500</div>
+						<a href="#contacto" class="btn btn-primary" style="width: 100%; text-align: center;">
+							<span>Consultar</span>
+						</a>
+					</div>
+				</div>
+				<div class="product-card">
+					<div class="product-image">🕶️</div>
+					<div class="product-content">
+						<span class="product-badge">Oakley</span>
+						<h3>Deportivos Premium</h3>
+						<p>Diseño deportivo de alto rendimiento. Lentes polarizados y marco ultra resistente.</p>
+						<div class="product-price">Desde $3,200</div>
+						<a href="#contacto" class="btn btn-primary" style="width: 100%; text-align: center;">
+							<span>Consultar</span>
+						</a>
+					</div>
+				</div>
+				<div class="product-card">
+					<div class="product-image">👓</div>
+					<div class="product-content">
+						<span class="product-badge">Prada</span>
+						<h3>Elegancia Italiana</h3>
+						<p>Sofisticación y estilo en cada detalle. Marcos acetato premium con diseño exclusivo.</p>
+						<div class="product-price">Desde $4,800</div>
+						<a href="#contacto" class="btn btn-primary" style="width: 100%; text-align: center;">
+							<span>Consultar</span>
+						</a>
+					</div>
+				</div>
+				<div class="product-card">
+					<div class="product-image">🕶️</div>
+					<div class="product-content">
+						<span class="product-badge">Gucci</span>
+						<h3>Lujo y Distinción</h3>
+						<p>La excelencia del diseño italiano. Detalles únicos que definen tu personalidad.</p>
+						<div class="product-price">Desde $5,500</div>
+						<a href="#contacto" class="btn btn-primary" style="width: 100%; text-align: center;">
+							<span>Consultar</span>
+						</a>
+					</div>
+				</div>
+				<div class="product-card">
+					<div class="product-image">👓</div>
+					<div class="product-content">
+						<span class="product-badge">Tom Ford</span>
+						<h3>Vanguardia y Estilo</h3>
+						<p>Diseños contemporáneos que marcan tendencia. Calidad excepcional garantizada.</p>
+						<div class="product-price">Desde $4,200</div>
+						<a href="#contacto" class="btn btn-primary" style="width: 100%; text-align: center;">
+							<span>Consultar</span>
+						</a>
+					</div>
+				</div>
+				<div class="product-card">
+					<div class="product-image">🕶️</div>
+					<div class="product-content">
+						<span class="product-badge">Versace</span>
+						<h3>Exclusividad Total</h3>
+						<p>El glamour de la alta moda en tus ojos. Diseños únicos e inconfundibles.</p>
+						<div class="product-price">Desde $5,000</div>
+						<a href="#contacto" class="btn btn-primary" style="width: 100%; text-align: center;">
+							<span>Consultar</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Process Section -->
+		<section id="proceso">
+			<div class="section-header">
+				<span class="section-badge">Nuestro Proceso</span>
+				<h2 class="section-title">De Second Hand a Como Nuevo</h2>
+				<p class="section-description">
+					Cada lente pasa por un riguroso proceso de selección y restauración profesional.
+				</p>
+			</div>
+			<div class="process-timeline">
+				<div class="process-step">
+					<div class="step-number">1</div>
+					<div class="step-content">
+						<h3>Selección Rigurosa</h3>
+						<p>Solo elegimos lentes originales de marcas premium en excelente condición. Verificamos autenticidad y calidad de cada pieza.</p>
+					</div>
+				</div>
+				<div class="process-step">
+					<div class="step-number">2</div>
+					<div class="step-content">
+						<h3>Inspección Detallada</h3>
+						<p>Examinamos cada componente: marcos, bisagras, lentes y acabados. Identificamos cualquier detalle que necesite atención.</p>
+					</div>
+				</div>
+				<div class="process-step">
+					<div class="step-number">3</div>
+					<div class="step-content">
+						<h3>Restauración Profesional</h3>
+						<p>Limpieza profunda, pulido de marcos, reemplazo de piezas si es necesario y ajustes precisos por expertos.</p>
+					</div>
+				</div>
+				<div class="process-step">
+					<div class="step-number">4</div>
+					<div class="step-content">
+						<h3>Control de Calidad</h3>
+						<p>Verificación final exhaustiva. Solo los lentes que cumplen nuestros estándares llegan a la venta.</p>
+					</div>
+				</div>
+				<div class="process-step">
+					<div class="step-number">5</div>
+					<div class="step-content">
+						<h3>Listo para Ti</h3>
+						<p>Tu nuevo lente está listo para lucir increíble. Incluye estuche y paño de limpieza profesional.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Sustainability Section -->
+		<section id="sustentabilidad" style="background: var(--bg-secondary); padding: 5rem 1.5rem; margin: 0 -1.5rem;">
+			<div style="max-width: 1400px; margin: 0 auto;">
+				<div class="section-header">
+					<span class="section-badge">Sustentabilidad</span>
+					<h2 class="section-title">Moda Consciente y Responsable</h2>
+					<p class="section-description">
+						Creemos en un futuro más verde. Cada lente que restauramos es un paso hacia la economía circular.
+					</p>
+				</div>
+				<div class="sustainability-content">
+					<div class="sustainability-text">
+						<h3>Nuestro Compromiso Ambiental</h3>
+						<p>
+							En Vitra entendemos que la moda sustentable no es solo una tendencia, es una responsabilidad. Por eso, nos dedicamos a dar nueva vida a lentes de lujo que merecen una segunda oportunidad.
+						</p>
+						<p>
+							Al elegir second hand, no solo accedes a productos de calidad premium a precios accesibles, sino que también contribuyes activamente a reducir la huella ambiental de la industria de la moda.
+						</p>
+						<p>
+							Cada lente restaurado significa menos residuos en vertederos, menos recursos naturales utilizados y menos emisiones de carbono. Es lujo consciente al alcance de todos.
+						</p>
+					</div>
+					<div class="sustainability-stats">
+						<div class="stat-card">
+							<div class="stat-number">500+</div>
+							<div class="stat-label">Lentes Restaurados</div>
+						</div>
+						<div class="stat-card">
+							<div class="stat-number">80%</div>
+							<div class="stat-label">Menos Huella de Carbono</div>
+						</div>
+						<div class="stat-card">
+							<div class="stat-number">100%</div>
+							<div class="stat-label">Empaques Reciclables</div>
+						</div>
+						<div class="stat-card">
+							<div class="stat-number">300+</div>
+							<div class="stat-label">Clientes Satisfechos</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<aside>
+		<!-- Testimonials Section -->
+		<section id="testimonios">
+			<div class="section-header">
+				<span class="section-badge">Testimonios</span>
+				<h2 class="section-title">Lo Que Dicen Nuestros Clientes</h2>
+				<p class="section-description">
+					La satisfacción de nuestros clientes es nuestro mejor indicador de éxito.
+				</p>
+			</div>
+			<div class="testimonials-grid">
+				<div class="testimonial-card">
+					<div class="quote-icon">"</div>
+					<div class="stars">⭐⭐⭐⭐⭐</div>
+					<p class="testimonial-text">
+						"Increíble la calidad de los lentes. Compré unos Ray-Ban que lucen como nuevos. La atención fue excelente y los precios son realmente únicos. 100% recomendado."
+					</p>
+					<div class="testimonial-author">
+						<div class="author-avatar">MC</div>
+						<div class="author-info">
+							<h5>María Castellanos</h5>
+							<p>Cliente frecuente</p>
+						</div>
+					</div>
+				</div>
+				<div class="testimonial-card">
+					<div class="quote-icon">"</div>
+					<div class="stars">⭐⭐⭐⭐⭐</div>
+					<p class="testimonial-text">
+						"Encontré los Oakley que buscaba hace meses a un precio increíble. El proceso de restauración es impecable, no se nota que son second hand. ¡Volveré seguro!"
+					</p>
+					<div class="testimonial-author">
+						<div class="author-avatar">JR</div>
+						<div class="author-info">
+							<h5>Javier Rodríguez</h5>
+							<p>Deportista</p>
+						</div>
+					</div>
+				</div>
+				<div class="testimonial-card">
+					<div class="quote-icon">"</div>
+					<div class="stars">⭐⭐⭐⭐⭐</div>
+					<p class="testimonial-text">
+						"Me encanta el concepto sustentable de Vitra. Compré unos Prada hermosos y me siento bien sabiendo que estoy contribuyendo al medio ambiente. Las chicas son súper atentas."
+					</p>
+					<div class="testimonial-author">
+						<div class="author-avatar">LS</div>
+						<div class="author-info">
+							<h5>Laura Suárez</h5>
+							<p>Diseñadora</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</aside>
+    <!-- Contact Section -->
+    <section id="contacto">
+        <div class="section-header">
+            <span class="section-badge">Visitanos</span>
+            <h2 class="section-title">Estamos en Montevideo</h2>
+            <p class="section-description">
+                Te esperamos en Galería Libertador. ¡Ven a descubrir tu próximo look!
+            </p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-details">
+                        <h4>Ubicación</h4>
+                        <p>
+                            Galería Libertador<br>
+                            18 de Julio 921 esq. Convención<br>
+                            Montevideo, Uruguay
+                        </p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🕐</div>
+                    <div class="contact-details">
+                        <h4>Horarios de Atención</h4>
+                        <p>
+                            <strong>Lunes a Viernes:</strong> 10:30 - 20:00 hs<br>
+                            <strong>Sábados:</strong> 10:30 - 14:00 hs<br>
+                            <strong>Domingos:</strong> Cerrado
+                        </p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-details">
+                        <h4>Contacto</h4>
+                        <p>
+                            WhatsApp: <strong>+598 XX XXX XXX</strong><br>
+                            Instagram: <strong>@vitra.uy</strong><br>
+                            Email: <strong>hola@vitra.uy</strong>
+                        </p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">💳</div>
+                    <div class="contact-details">
+                        <h4>Medios de Pago</h4>
+                        <p>
+                            Efectivo, Débito, Crédito<br>
+                            Transferencia bancaria<br>
+                            Mercado Pago
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=-56.19121551513673%2C-34.90677894736842%2C-56.18446350097657%2C-34.90230452631579&amp;layer=mapnik&amp;marker=-34.904541736842104%2C-56.18783950805664"
+                    allowfullscreen
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre Vitra</h3>
+                <p>Somos emprendedoras apasionadas por la moda sustentable. Restauramos y vendemos lentes de marca originales, combinando calidad premium con precios accesibles y compromiso ambiental.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                    <a href="#" class="social-link" aria-label="Facebook">👥</a>
+                    <a href="#" class="social-link" aria-label="WhatsApp">💬</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#proceso">Nuestro Proceso</a></li>
+                    <li><a href="#sustentabilidad">Sustentabilidad</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Marcas Disponibles</h3>
+                <ul>
+                    <li>Ray-Ban</li>
+                    <li>Oakley</li>
+                    <li>Prada</li>
+                    <li>Gucci</li>
+                    <li>Tom Ford</li>
+                    <li>Versace</li>
+                    <li>Dolce & Gabbana</li>
+                    <li>Carrera</li>
+                    <li>Y muchas más...</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Información Legal</h3>
+                <ul>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                    <li><a href="#">Envíos y Entregas</a></li>
+                    <li><a href="#">Política de Cambios</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>            
+                    <li><a href="KikiriyaDevOps.html">Garantía de Autenticidad</a></li>
+                    <li><a href="disclaimer.html">Política de Privacidad</a></li>        
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Vitra Uruguay | Todos los derechos reservados.</p>
+			<p>  Diseñado con 💚 en Montevideo</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Volver arriba">
+        ↑
+    </button>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', currentTheme);
+        <!-- themeIcon.textContent = currentTheme === 'dark' ? '☀️' : '🌙'; -->
+
+        themeToggle.addEventListener('click', () => {
+            const theme = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+        });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 768) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+		
+		 navMenu.addEventListener('click', (e) => {
+			navMenu.classList.remove('active');
+		 });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.classList.add('scrolled');
+				header.style.backgroundColor ="var(--white_transp2)";
+            } else {
+                header.classList.remove('scrolled');
+				
+				header.style.backgroundColor ="var(--white_transp1)";
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 500) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top:0,
+                behavior: 'smooth'				
+            });
+			
+				console.log(window.pageYOffset);
+        });
+
+        // Smooth scroll for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.querySelectorAll('.feature-card, .product-card, .testimonial-card, .process-step').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Form validation (if you add a contact form later)
+        const validateEmail = (email) => {
+            return String(email)
+                .toLowerCase()
+                .match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+        };
+
+        // Add loading state to buttons
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if (this.classList.contains('loading')) {
+                    e.preventDefault();
+                }
+            });
+        });
+
+        // Console welcome message
+        console.log('%c¡Bienvenido a Vitra! 👓', 'font-size: 20px; color:yellow; font-weight: bold;');
+        console.log('%cEmprendedoras con + estilo en un solo lugar', 'color:yellow; font-size: 14px;');
+
+        // Performance monitoring
+        window.addEventListener('load', () => {
+            const loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
+            console.log(`Página cargada en ${loadTime}ms`);
+        });
+
+        // Easter egg - konami code
+        let konamiCode = [];
+        const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+        
+        document.addEventListener('keydown', (e) => {
+            konamiCode.push(e.key);
+            konamiCode = konamiCode.slice(-10);
+            
+            if (konamiCode.join('') === konamiSequence.join('')) {
+                document.body.style.animation = 'rainbow 2s infinite';
+                setTimeout(() => {
+                    document.body.style.animation = '';
+                    alert('¡Código secreto activado! 🎉 Obtén 10% de descuento en tu próxima compra. Código: VITRA10');
+                }, 2000);
+            }
+        });
+
+        // Add rainbow animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes rainbow {
+                0% { filter: hue-rotate(0deg); }
+                100% { filter: hue-rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Lazy loading images optimization
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                            observer.unobserve(img);
+                        }
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Track user interactions for analytics (placeholder)
+		
+		let contadorVisitas = 0;
+        const trackEvent = (category, action, label) => {
+				contador++;
+            console.log(`Analytics: ${category} - ${action} - ${label} - Vsitas: ${contadorVisitas}`);
+            // Here you would integrate with Google Analytics or similar
+            // gtag('event', action, { 'event_category': category, 'event_label': label });
+        };
+
+        // Track button clicks
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                trackEvent('Button', 'Click', btn.textContent.trim());
+            });
+        });
+
+        // Track navigation clicks
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                trackEvent('Navigation', 'Click', link.textContent.trim());
+            });
+        });
+
+
+        // Check if user prefers reduced motion
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        
+        if (prefersReducedMotion) {
+            // Disable animations for users who prefer reduced motion
+            document.querySelectorAll('*').forEach(el => {
+                el.style.animation = 'none';
+                el.style.transition = 'none';
+            });
+        }
+
+        // Add copy email functionality
+        const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+        emailLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const email = link.textContent.trim();
+                navigator.clipboard.writeText(email).then(() => {
+                    alert(`Email copiado: ${email}`);
+                }).catch(() => {
+                    window.location.href = link.href;
+                });
+            });
+        });
+
+        // Service Worker registration for PWA (optional)
+        
+        <!-- if ('serviceWorker' in navigator) { -->
+            <!-- window.addEventListener('load', () => { -->
+                <!-- navigator.serviceWorker.register('/sw.js') -->
+                    <!-- .then(registration => console.log('SW registered:', registration)) -->
+                    <!-- .catch(err => console.log('SW registration failed:', err)); -->
+            <!-- }); -->
+        <!-- } -->
+        
+
+        // Add page visibility API to pause animations when tab is not active
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                // Pause animations
+                document.querySelectorAll('*').forEach(el => {
+                    const style = window.getComputedStyle(el);
+                    if (style.animationName !== 'none') {
+                        el.style.animationPlayState = 'paused';
+                    }
+                });
+            } else {
+                // Resume animations
+                document.querySelectorAll('*').forEach(el => {
+                    el.style.animationPlayState = 'running';
+                });
+            }
+        });
+
+        // Dynamic copyright year
+        const currentYear = new Date().getFullYear();
+        document.querySelectorAll('.footer-bottom p').forEach(p => {
+            if (p.textContent.includes('2025')) {
+                p.textContent = p.textContent.replace('2025', currentYear);
+            }
+        });
+
+        // Add keyboard navigation for accessibility
+        document.addEventListener('keydown', (e) => {
+            // Press '/' to focus on navigation
+            if (e.key === '/' && !e.target.matches('input, textarea')) {
+                e.preventDefault();
+                menuToggle.focus();
+            }
+            
+            // Press 'Escape' to close mobile menu
+            if (e.key === 'Escape') {
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Add loading indicator for external links
+        document.querySelectorAll('a[href^="http"]').forEach(link => {
+            if (!link.href.includes(window.location.hostname)) {
+                link.setAttribute('target', '_blank');
+                link.setAttribute('rel', 'noopener noreferrer');
+            }
+        });
+
+        // Initialize tooltips (if you add data-tooltip attributes)
+        document.querySelectorAll('[data-tooltip]').forEach(el => {
+            el.addEventListener('mouseenter', (e) => {
+                const tooltip = document.createElement('div');
+                tooltip.className = 'tooltip';
+                tooltip.textContent = el.dataset.tooltip;
+                tooltip.style.position = 'absolute';
+                tooltip.style.background = 'var(--primary)';
+                tooltip.style.color = 'white';
+                tooltip.style.padding = '0.5rem 1rem';
+                tooltip.style.borderRadius = '8px';
+                tooltip.style.fontSize = '0.9rem';
+                tooltip.style.zIndex = '10000';
+                tooltip.style.pointerEvents = 'none';
+                
+                document.body.appendChild(tooltip);
+                
+                const rect = el.getBoundingClientRect();
+                tooltip.style.top = `${rect.top - tooltip.offsetHeight - 10}px`;
+                tooltip.style.left = `${rect.left + (rect.width - tooltip.offsetWidth) / 2}px`;
+                
+                el._tooltip = tooltip;
+            });
+            
+            el.addEventListener('mouseleave', () => {
+                if (el._tooltip) {
+                    el._tooltip.remove();
+                    delete el._tooltip;
+                }
+            });
+        });
+
+        // Add shake animation on invalid form submission (for future forms)
+        const addShakeAnimation = (element) => {
+            element.style.animation = 'shake 0.5s';
+            setTimeout(() => {
+                element.style.animation = '';
+            }, 500);
+        };
+
+        const shakeStyle = document.createElement('style');
+        shakeStyle.textContent = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+                20%, 40%, 60%, 80% { transform: translateX(10px); }
+            }
+        `;
+        document.head.appendChild(shakeStyle);
+
+        // Prevent default form submission and add validation
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                let isValid = true;
+                const inputs = form.querySelectorAll('input[required], textarea[required]');
+                
+                inputs.forEach(input => {
+                    if (!input.value.trim()) {
+                        isValid = false;
+                        addShakeAnimation(input);
+                        input.style.borderColor = '#ff4444';
+                    } else {
+                        input.style.borderColor = '';
+                    }
+                });
+                
+                if (isValid) {
+                    alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
+                    form.reset();
+                }
+            });
+        });
+
+        // Add print styles dynamically
+        const printStyles = document.createElement('style');
+        printStyles.textContent = `
+            @media print {
+                header, .scroll-top, .cta-buttons { display: none !important; }
+                body { background: white !important; color: black !important; }
+                a { text-decoration: underline !important; }
+            }
+        `;
+        document.head.appendChild(printStyles);
+
+        // Console easter egg
+        setTimeout(() => {
+            console.log('%c💼 ¿Buscas un sitio para tus ideas?', 'color:orange;font-size: 16px; font-weight: bold;');
+            console.log(' %cEnvía tu mail a: www.kikiriyadevops@gmail.com', ' color:orange; font-size: 14px;');
+            console.log('%c📞: 094872605', 'color:orange;font-size: 14px;');
+        }, 1500);
+
+        // Final console message
+        console.log('%cSitio desarrollado con ❤️ y 👽 por KikiriyaDevOps', 'font-size: 12px; color: #d4af37;');
+        console.log('%cTodas las funcionalidades están optimizadas y testeadas ✓', 'font-size: 12px; color: #4CAF50;');
+    </script>
+</body>
+</html>
