@@ -297,12 +297,15 @@
             justify-content: center;
             font-size: 1.3rem;
             transition: all 0.3s ease;
+			width: 30px;
+			height: 30px;
         }
 
         .theme-toggle:hover {
             transform: rotate(360deg) scale(1.1);
             <!-- color: white; -->
         }
+		
 		
 		.sun-icon {
             display: block;
@@ -1096,14 +1099,25 @@
         }
 
         @media (min-width: 768px) {
+		
+		.nav-container{
+			padding:1rem;
+			gap:.5rem;
+		}
             .nav-menu {
                 display: flex;
+				align-items: flex-end;
                 flex-direction: row;
                 position: static;
                 background: none;
                 padding: 0;
                 box-shadow: none;
+				& a{    padding: 0.8rem;
+						font-size:.9em;}
             }
+			.logo_title{
+				font-size: 1.2em;
+			}
 
             .menu-toggle {
                 display: none;
@@ -1233,13 +1247,13 @@
                             </svg>
 					</a>
 				</li>
+				<li  class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+						<img class="moon-icon" src="logo_icons/gafa_light.png"/>
+						<img class="sun-icon" src="logo_icons/gafa_dark.png"/>
+				</li>
             </ul>
 
             <div class="nav-controls">
-				<button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-					<img class="moon-icon" src="logo_icons/gafa_light.png"/>
-					<img class="sun-icon" src="logo_icons/gafa_dark.png"/>
-                </button>
                 <button class="menu-toggle" id="menuToggle" aria-label="Menú">
                     ☰
                 </button>
