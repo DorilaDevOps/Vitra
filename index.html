@@ -48,7 +48,7 @@
             --verdecito-hover_trans:#7ad29491;
             --bg-primary: #ffffff;
             --bg-secondary: #f8f9fa;
-            --white_transp1: #cfc9c99e;
+            --white_transp1: #e7e6e69e;
             --white_transp2: #9788889e;
 			--mercedes_color: #048858;
             --grey_transp: rgb(48 46 46 / 97%);
@@ -76,6 +76,7 @@
 			--font_family_Verdana: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 			
 			/*UNIQUES */			
+			--beige_transparent: #e9d69c91;
             --overlayGrey: var(--grey_transp);
             --overlayBlue: var(--blue_transp);
         }
@@ -174,6 +175,12 @@
 
         .header.scrolled {
             box-shadow: 0 4px 30px var(--shadow-hover);
+            transform: translateY(-100%);
+        }
+		
+		.header.visible {
+            opacity: 1;
+            visibility: visible;
         }
 
         .nav-container {
@@ -322,19 +329,21 @@
             color: var(--verdecito);
         }
 
-        main{
-			padding: 1rem .5rem;
+        main, aside{
+			padding:.5rem;
 		}
 		
         .hero {
-            margin-top: 10px;
+            margin:1rem 0 1rem 0;
             min-height: calc(100vh - 20px);
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             background: linear-gradient(180deg, var(--deg2) 0%, var(--deg3) 36%);
-            overflow: hidden;
+            overflow: hidden;    
+			border-radius: 0 0 10px 10px;
+			border-bottom: 1px solid white;
         }
 
         .hero::before {
@@ -464,11 +473,11 @@
             height: 300px;
         }
 
-        .btn span {			
-			display:flex;			
-			align-items: center;
+        .btn span {
+			display:flex;
             position: relative;
-			gap: .2rem;
+			gap: .6rem;
+			align-items: center;
         }
 
         .btn-primary{
@@ -476,10 +485,9 @@
             color: var(--text-primary);
             border: 2px solid var(--secondary_trans);
             display: inline-block;
-            padding: 0.5rem 1.5rem;
+            padding: 0.5rem 1.8rem;
             font-size: 0.9rem;
             font-weight: 400;
-            margin-bottom: 1.5rem;
             animation: fadeInUp 1.2s ease;
         }
 
@@ -495,25 +503,37 @@
         section {            
             max-width: 1400px;
             margin: 0 auto;
-			padding: 1rem .5rem;
+			padding: .5rem;
         }
 
         .section-header {
-            text-align: left;
-			margin-bottom: 2rem;
+		    display: flex;
+			flex-direction: column;
+			margin-bottom: 1rem;
 			animation: fadeInUp 0.8s ease;
+			background: var(--white_transp1);
+			padding: .2rem;
+			border-radius: 25px;
+			transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+			/* border: 1px solid var(--border); */
+			position: relative;
+			overflow: hidden;
         }
 
         .section-badge {
+			width:100%;
             display: inline-block;
-            background: rgba(212, 175, 55, 0.1);
-            color: var(--verdecito);
+			text-align:center;
+            color: var(--verdecito);			
+			text-shadow: 0 2px 2px var(--secondary);
             padding: 0.4rem 1.2rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
+            border-radius: 20px;
+            font-size: 1.4rem;
             font-weight: 600;
             margin-bottom: 1rem;
-            border: 1px solid rgba(212, 175, 55, 0.3);
+			border:none;
+			border-top:2px solid var(--verdecito);
+			
         }
 
         .section-title {
@@ -526,21 +546,33 @@
         .section-description {
             color: var(--text-secondary);
             max-width: 700px;
+			font-size: .9em;
             margin: 0 auto;
+			text-align:center;
         }
-
-        /* Features Grid */
+		
+		 #sustentabilidad{
+			display:flex;
+			flex-direction:column;
+			background: var(--white_transp1);
+			padding: .8rem; 
+			margin: 0 .4rem;
+			max-width: 1500px;
+			border-radius: 3%;
+		 }
+        
         .features-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 2rem;
+            gap: 1rem;
         }
 
         .feature-card {
             background: var(--white_transp1);
-            padding: 1.5rem;
-            border-radius: 20px;
-            box-shadow: 0 4px 20px var(--shadow);
+            padding: .7rem;
+            border-radius: 10px;
+			box-shadow: inset 0 0 10px 0px var(--shadow);
+            <!-- box-shadow: 0 4px 20px var(--shadow); -->
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid var(--border);
             position: relative;
@@ -581,14 +613,14 @@
         }
 
         .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
+            font-size: 1rem;
+            margin-bottom: .5rem;
+            color: var(--text-secondary);
         }
 
         .feature-card p {
             color: var(--text-secondary);
-            line-height: 1.7;
+            line-height: 1.4;
         }
 
         /* Products Section */
@@ -689,8 +721,9 @@
 
         .process-step {
             display: flex;
-            gap: 1.5rem;
-            margin-bottom: 3rem;
+			align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
             position: relative;
             animation: fadeInLeft 0.8s ease;
         }
@@ -707,13 +740,14 @@
         }
 
         .step-number {
-            flex-shrink: 0;
+			display:none;
+            flex:0 1 0;
             width: 60px;
             height: 60px;
             background: linear-gradient(135deg, var(--verdecito), var(--verdecito-hover));
             color: var(--primary);
             border-radius: 50%;
-            display: flex;
+            <!-- display: flex; -->
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
@@ -754,7 +788,7 @@
         .sustainability-content {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 3rem;
+            gap: 1rem;
             align-items: center;
         }
 
@@ -782,7 +816,7 @@
 
         .stat-card {
             background: var(--white_transp1);
-            padding: 1rem;
+            padding: .5rem;
             border-radius: 15px;
             text-align: center;
             border: 2px solid var(--border);
@@ -796,27 +830,27 @@
         }
 
         .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
+            font-size: 1.5rem;
+			font-weight: 600;
             color: var(--verdecito);
             margin-bottom: 0.5rem;
         }
 
         .stat-label {
             color: var(--text-secondary);
-            font-size: 0.95rem;
+            font-size: 0.7rem;
         }
 
         /* Contact Section */
         .contact-container {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 3rem;
+            gap: 1rem;
         }
 
         .contact-info {
             
-            padding: 2.5rem;
+            padding: 1.5rem;
             border-radius: 20px;
             box-shadow: 0 4px 20px var(--shadow);
             border: 1px solid var(--border);
@@ -825,9 +859,9 @@
         .contact-item {
             display: flex;
             align-items: start;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-            padding: 1.5rem;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
             border: 1px solid var(--white_transp1);
             border-radius: 15px;
             transition: all 0.3s ease;
@@ -876,8 +910,8 @@
 			background-color: antiquewhite;
 			color: red;
             gap: 1.5rem;
-            margin-bottom: 2rem;
-            padding: 1.5rem;
+            margin-bottom: .2rem;
+            padding: 1rem;
             background: var(--bg-secondary);
             border-radius: 15px;
             transition: var(--transition);
@@ -900,17 +934,16 @@
         .testimonials-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 2rem;
+            gap: 1rem;
         }
 
         .testimonial-card {
             background: var(--white_transp1);
-            padding: 2.5rem;
+            padding: 1rem;
             border-radius: 20px;
             box-shadow: 0 4px 20px var(--shadow);
             border: 1px solid var(--border);
             position: relative;
-            transition: all 0.3s ease;
         }
 
         .testimonial-card:hover {
@@ -930,11 +963,11 @@
         .testimonial-text {
             font-style: italic;
             color: var(--text-secondary);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             position: relative;
             z-index: 1;
-            font-size: 1.05rem;
-            line-height: 1.8;
+            font-size: .7rem;
+            line-height: 1.5;
         }
 
         .testimonial-author {
@@ -944,31 +977,30 @@
         }
 
         .author-avatar {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--verdecito), var(--verdecito-hover));
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            color: white;
+            font-size: 1rem;
+            border:1px solid var(--text-secondary);
+			color: var(--text-primary);
         }
 
         .author-info h5 {
-            color: var(--text-primary);
-            font-size: 1rem;
+            color: var(--text-secondary);
+            font-size: .9rem;
             margin-bottom: 0.2rem;
         }
 
         .author-info p {
             color: var(--text-secondary);
-            font-size: 0.85rem;
+            font-size: 0.7rem;
         }
 
         .stars {
-            color: var(--verdecito);
-            font-size: 1.1rem;
+            font-size: .9rem;
             margin-bottom: 1rem;
         }
 
@@ -976,7 +1008,7 @@
         footer {
             background: linear-gradient(135deg, var(--primary_trans), var(--secondary_trans));
             color: var(--text-primary);
-            padding: 1rem 1.5rem;
+            padding: 1rem;
 			margin-top: 1.2rem;
         }
 
@@ -1045,7 +1077,7 @@
 
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 2rem;
+            padding-top: 1rem;
             text-align: center;
         }
 
@@ -1059,6 +1091,8 @@
             .products-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+			
+			.step-number{display:flex;}
         }
 
         @media (min-width: 768px) {
@@ -1194,7 +1228,7 @@
                 <li><a href="#testimonios">Testimonios</a></li>
                 <li><a href="#contacto">Contacto</a></li>
                 <li><a href="https://www.instagram.com/calu_home" class="social_link nav__link" aria-label="Instagram" target="_blank" style="">
-                            <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                             </svg>
 					</a>
@@ -1239,58 +1273,55 @@
 			</div>
 		</section>
 
-		<!-- Features Section -->
-		<section id="nosotros">
+		<section id="nosotros">		
+            <div class="section-header">
+				<span class="section-badge">Sobre Vitra</span>
+                <h2 class="section-title">Moda Consciente y Responsable</h2>
+                <p>Somos un emprendimiento familiar que apuesta al consumo responsable, a lo original, y a las piezas con alma.
+				</p><p>Un espacio donde las piezas con pasado encuentran nuevas miradas.</p>
+				<p>Porque ver el mundo con otros ojos también significa hacerlo con más conciencia, apoyamos el consumo responsable sin perder el diseño ni la calidad.
+				</p>
+				<p>Restauramos y vendemos lentes de marca originales, combinando calidad premium con precios accesibles y compromiso ambiental.</p>
+                <p>Lo nuestro no es solo un negocio, es una forma de ver el futuro.</p>
+            </div>
+							
 			<div class="section-header">
 				<span class="section-badge">Por Qué Elegirnos</span>
 				<h2 class="section-title">Calidad y Estilo en Cada Detalle</h2>
-				<p class="section-description">
+				<p >
 					Somos emprendedoras comprometidas con ofrecer lentes de marca originales, restaurados profesionalmente y a precios únicos.
 				</p>
-				<p>“Elegí diferente. Elegí con sentido.”</p>
-				<p>“Originales. Globales. Con alma.
-
-Slow fashion, fast look.
-”</p>
 			</div>
 			<div class="features-grid">
 				<div class="feature-card">
-					<div class="feature-icon">👓</div>
 					<h3>100% Originales</h3>
 					<p>Lentes que ya vivieron algo… y están listos para más. Trabajamos solo con productos originales de marcas reconocidas mundialmente.</p>
 				</div>
 				<div class="feature-card">
-					<div class="feature-icon">✨</div>
 					<h3>Vistos antes, pero nunca así.</h3>
 					<p>Restaurados por un proceso riguroso de restauración para lucir como nuevo, manteniendo su calidad original.</p>
 				</div>
 				<div class="feature-card">
-					<div class="feature-icon">🌱</div>
 					<h3>Compromiso Sustentable</h3>
 					<p>Contribuimos a la economía circular y reducimos el impacto ambiental dando nueva vida a productos de calidad.</p>
 				</div>
 				<div class="feature-card">
-					<div class="feature-icon">🎯</div>
 					<h3>Atención Personalizada</h3>
 					<p>Te asesoramos para encontrar el lente perfecto que se adapte a tu estilo y necesidades específicas.</p>
 				</div>
 				<div class="feature-card">
-					<div class="feature-icon">⚡</div>
 					<h3>Siempre Actualizado</h3>
 					<p>Constantemente renovamos nuestro stock con las últimas tendencias y modelos más buscados del mercado.</p>
 				</div>
 				<div class="feature-card">
-					<div class="feature-icon">🛡️</div>
 					<h3>Garantía de Calidad</h3>
 					<p>Todos nuestros productos cuentan con garantía. Tu satisfacción es nuestra prioridad número uno.</p>
 				</div>				
 				<div class="feature-card">
-					<div class="feature-icon">💰</div>
 					<h3>De colección, pero accesibles</h3>
 					<p>Accede a lentes de marcas premium a precios accesibles. Estilo de lujo sin comprometer tu presupuesto.</p>
 				</div>
 				<div class="feature-card">
-					<div class="feature-icon">💎</div>
 					<h3>Marcas Premium</h3>
 					<p>Ray-Ban, Oakley, Prada, Gucci y más. Accede a las mejores marcas del mercado a precios increíbles.</p>
 				</div>
@@ -1443,23 +1474,15 @@ Slow fashion, fast look.
 		</section>
 
 		<!-- Sustainability Section -->
-		<section id="sustentabilidad" style="background: var(--bg-secondary); padding: 5rem 1.5rem; margin: 0 -1.5rem;">
-			<div style="max-width: 1400px; margin: 0 auto;">
+		<section id="sustentabilidad">
 				<div class="section-header">
 					<span class="section-badge">Sustentabilidad</span>
-					<h2 class="section-title">Moda Consciente y Responsable</h2>
-					<p>Creemos en un futuro más verde. Cada lente que restauramos es un paso hacia la economía circular.</p>
-					<p>Dales otra mirada. Y que te devuelvan una nueva.</p>
-					<p>Reusá. Reestrená. Redefiní tu estilo</p>
-				</div>
-				<div class="sustainability-content">
-					<div class="sustainability-text">
-						<h3>Nuestro Compromiso Ambiental</h3>
-						<p>En Vitra entendemos que la moda sustentable no es solo una tendencia, es una responsabilidad. Reutilizar también puede ser de lujo.</p>
-						<p>Al elegir second hand, no solo accedes a productos de calidad premium a precios accesibles, sino que también contribuyes activamente a reducir la huella ambiental de la industria de la moda.</p>
-						<p>Cada lente restaurado significa menos residuos en vertederos, menos recursos naturales utilizados y menos emisiones de carbono. Es lujo consciente al alcance de todos.</p>
-					</div>
-					<div class="sustainability-stats">
+					<h2 class="section-title">Nuestro Compromiso Ambiental</h2>					
+					<p>En Vitra entendemos que la moda sustentable no es solo una tendencia, es una responsabilidad. Reutilizar también puede ser de lujo.</p>
+					<p>Al elegir second hand, no solo accedes a productos de calidad premium a precios accesibles, sino que también contribuyes activamente a reducir la huella ambiental de la industria de la moda.</p>
+					<p>Cada lente restaurado significa menos residuos en vertederos, menos recursos naturales utilizados y menos emisiones de carbono. Es lujo consciente al alcance de todos.</p>
+				</div>				
+				<div class="sustainability-content">	
 						<div class="stat-card">
 							<div class="stat-number">500+</div>
 							<div class="stat-label">Lentes Restaurados</div>
@@ -1476,9 +1499,7 @@ Slow fashion, fast look.
 							<div class="stat-number">300+</div>
 							<div class="stat-label">Clientes Satisfechos</div>
 						</div>
-					</div>
 				</div>
-			</div>
 		</section>
 	</main>
 	<aside>
@@ -1543,7 +1564,6 @@ Slow fashion, fast look.
             <div class="contact-info">
 					<h2 class="section-badge">¿Buscás algo único?</h2> 
 					<h2 class="section-title">Encontrá tu próximo par favorito.</h2> 
-					<p class="section-title">Encontrá tu próximo par favorito.</p> 
                 <div class="contact-item">
                     <div class="contact-icon">🕐</div>
                     <div class="contact-details">    
@@ -1602,22 +1622,6 @@ Slow fashion, fast look.
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <div class="footer-section">
-                <h3>Sobre Vitra</h3>
-                <p>Somos un emprendimiento familiar que apuesta al consumo responsable, a lo original, y a las piezas con alma.
- </p><p>Un espacio donde las piezas con pasado encuentran nuevas miradas.</p>
-				<p>Porque ver el mundo con otros ojos también significa hacerlo con más conciencia, apoyamos el consumo responsable sin perder el diseño ni la calidad.
-</p>
-				<p>Restauramos y vendemos lentes de marca originales, combinando calidad premium con precios accesibles y compromiso ambiental.</p>
-                <p>Lo nuestro no es solo un negocio, es una forma de ver el futuro.</p>
-				<div class="social-links">
-                    <a href="https://www.instagram.com/calu_home" class="social_link nav__link" aria-label="Instagram" target="_blank" style="">
-                            <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                            </svg>
-					</a>
-                </div>
-            </div>
             <div class="footer-section">
                 <h3>Enlaces Rápidos</h3>
                 <ul>
@@ -1718,9 +1722,10 @@ Slow fashion, fast look.
         let lastScroll = 0;
 
         window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 100) {
+            <!-- const currentScroll = window.pageYOffset; -->
+            const currentScroll = window.scrollY;
+			
+            if (currentScroll > 1200) {
                 header.classList.add('scrolled');
 				header.style.backgroundColor ="var(--white_transp2)";
             } else {
