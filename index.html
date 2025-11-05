@@ -79,6 +79,19 @@
 			--beige_transparent: #e9d69c91;
             --overlayGrey: var(--grey_transp);
             --overlayBlue: var(--blue_transp);
+			
+			--color-primary: #6366f1;
+            --color-secondary: #ec4899;
+            --color-dark: #1f2937;
+            --color-light: #f3f4f6;
+            --color-white: #ffffff;
+            --color-overlay: rgba(0, 0, 0, 0.5);
+            
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+			
         }
 
         [data-theme="dark"] {
@@ -120,6 +133,18 @@
             font-size: 100%;
         }		
 		
+        body {
+            font-family: var(--font_family_playflare);
+             line-height: 1.6;
+            letter-spacing: 0.3px;
+            color: var(--text-primary);
+			background: linear-gradient(180deg,var(--deg1) 0%, var(--deg2) 7%, var(--deg3) 36%, var(--deg4) 100%);
+            transition: var(--transition);
+            overflow-x: hidden;
+			padding: 1rem .5rem;
+			min-height:100dvh;
+        }
+		
         img {
             max-width: 100%;
             display: block;
@@ -150,16 +175,6 @@
 			    background: none;
         }
 		
-        body {
-            font-family: var(--font_family_playflare);
-             line-height: 1.6;
-            letter-spacing: 0.3px;
-            color: var(--text-primary);
-			background: linear-gradient(180deg,var(--deg1) 0%, var(--deg2) 7%, var(--deg3) 36%, var(--deg4) 100%);
-            transition: var(--transition);
-            overflow-x: hidden;
-			    padding: 1rem .5rem;
-        }
         
         .header {
             position: fixed;
@@ -283,6 +298,54 @@
             align-items: center;
             gap: 1rem;
         }
+		
+
+        .menu_toggle {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+			align-items: flex-end;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.8rem;
+            gap: 4px;
+            padding: .5rem;
+            cursor: pointer;
+            transition: var(--transition1s);
+        }
+        .menu_toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .menu_toggle:hover {
+            transform: scale(1.1);
+            color: var(--verdecito);
+        }
+		
+		.menu_toggle:hover span{background-color:red;}
+		
+		#menuToggle > span:nth-child(2){		
+			width:14px;
+		}
+
+        .menu_toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(4px, 1px);
+        }
+
+        .menu_toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu_toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -5px);
+        }
+
+
 
         .theme-toggle {
             background: transparent;
@@ -315,22 +378,6 @@
             display: none;
         }
 
-        .menu-toggle {
-            background: none;
-            border: none;
-            color: var(--text-primary);
-            font-size: 1.8rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.3s ease;
-        }
-
-        .menu-toggle:hover {
-            transform: scale(1.1);
-            color: var(--verdecito);
-        }
 
         main, aside{
 			padding:.5rem;
@@ -502,9 +549,7 @@
 			box-shadow: 0 10px 30px var(--verdecito-hover_trans);
         }
 
-        /* Section Styles */
         section {            
-            max-width: 1400px;
             margin: 0 auto;
 			padding: .5rem;
         }
@@ -544,6 +589,7 @@
             margin-bottom: 1rem;
             color: var(--text-primary);
             line-height: 1.2;
+			text-align:center;
         }
 
         .section-description {
@@ -559,7 +605,7 @@
 			flex-direction:column;
 			background: var(--white_transp1);
 			padding: .8rem; 
-			margin: 0 .4rem;
+			<!-- margin: 0 .4rem; -->
 			max-width: 1500px;
 			border-radius: 3%;
 		 }
@@ -626,7 +672,153 @@
             line-height: 1.4;
         }
 
-        /* Products Section */
+/* GALLERY*/
+
+/*galley Wrap*/
+.gallery_Wrap{
+			background:linear-gradient(180deg, var(--deg2) 0%, var(--deg3) 36%);
+			text-align: center;
+			border-top:2px solid var(--verdecito);
+			margin:2rem 0;
+			}
+/*galley container grid */
+.galeria_container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .gallery_item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--bg_secondary);
+            box-shadow: 0 4px 20px var(--shadow-light);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+.galery_estilizada{
+	display:flex;
+	flex-direction:column;
+	border: 2px solid red;
+}
+		
+			.imagen_clase {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery_item:hover .imagen_clase {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(#45435ecf, rgba(0, 0, 0, 0.7));
+            color: white;
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+		.gallery-overlay h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+		 /* Loading State */
+        .gallery_item.cargando {
+            background: linear-gradient(90deg, var(--bg_secondary) 25%, var(--border-color) 50%, var(--bg_secondary) 75%);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeInModal 0.3s ease;
+        }
+
+        .modal-content {
+            max-width: 90vw;
+            max-height: 95vh;
+            position: relative;
+            background: var(--secondary_trans);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal img {
+            width: 100%;
+            max-height: 70vh;
+            object-fit: cover;
+        }
+
+        .modal-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .modal-info h3 {
+            color: var(--mercedes_color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .modal-info p {
+            color: var(--mercedes_color);
+            line-height: 1.6;
+        }
+		.modal-info .btn_product{color:red;}
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: rgba(0, 0, 0, 0.8);
+            transform: rotate(90deg);
+        }
+		
+        @keyframes fadeInModal {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+		
+
+ /* Products Section */
         .products-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -941,17 +1133,22 @@
         }
 
         .testimonial-card {
+			width: 100%;
             background: var(--white_transp1);
-            padding: 1rem;
+            padding: .5rem;
             border-radius: 20px;
             box-shadow: 0 4px 20px var(--shadow);
             border: 1px solid var(--border);
             position: relative;
+			transition:var(--transition1s);
         }
 
         .testimonial-card:hover {
             transform: scale(1.03);
             box-shadow: 0 12px 40px var(--shadow-hover);
+			& .testimonial-text{
+				color:oklch(from var(--text-secondary) calc(l * .3) calc(c * .5) calc(h * 33));
+			}
         }
 
         .quote-icon {
@@ -1119,7 +1316,7 @@
 				font-size: 1.2em;
 			}
 
-            .menu-toggle {
+            .menu_toggle {
                 display: none;
             }
 
@@ -1161,8 +1358,11 @@
         }
 
         @media (min-width: 1024px) {
+		
+		html{font-size:140%;}
             .hero h1 {
                 font-size: 4rem;
+				color:red;
             }
 
             .features-grid {
@@ -1179,14 +1379,24 @@
 
             .footer-content {
                 grid-template-columns: repeat(4, 1fr);
+			    justify-items: center;
             }
+			
+			.footer_spanded{
+				grid-column: span 2;
+			}
+			.footer-bottom {    
+					display: flex;
+					gap: 2rem;
+					justify-content: center;
+					align-items: center;
+					
+					& p{
+						font-size:1em;
+					}
+			}
         }
 
-        @media (min-width: 1280px) {
-            .features-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
 
         /* Scroll to top button */
         .scroll-top {
@@ -1220,7 +1430,720 @@
             transform: translateY(-5px) scale(1.1);
             box-shadow: 0 8px 30px rgba(212, 175, 55, 0.6);
         }
+		
+/* Gallery Container */
+        .gallery-section {
+            padding: 2rem 0;
+            width: 100%;
+            position: relative;
+        }
 
+        .gallery-title {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            color: var(--text-primary);
+        }
+
+        /* Slider Container */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding: 1rem 0;
+        }
+
+        .slider-wrapper {
+            display: flex;
+			flex-direction: column;
+            gap: 1rem;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+        }
+
+        .slider-wrapper.paused {
+            animation-play-state: paused;
+        }
+
+        /* Card Styles */
+        .card {
+            min-width: 340px;
+			width:600px;
+            <!-- flex-shrink: 0; evita que se encoja-->
+            flex-shrink: 1;
+            position: relative;
+            cursor: pointer;
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--bg-card);
+            box-shadow: 0 2px 12px var(--shadow);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                        box-shadow 0.4s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            z-index: 10;
+        }
+		
+
+        .card-image {
+            width: 100%;
+            height: 320px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+		.card-image img{
+			width:100%;
+			border-radius:15%;
+		}
+        .card:hover .card-image::before {
+            opacity: 1;
+        }
+img {
+            max-width: 100%;
+            display: block;
+			height: auto;
+			width:50px;		
+  }
+  	<!-- .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            loading: lazy;
+        }
+		
+		background-size: cover; -->
+		<!-- background-attachment: fixed; -->
+		<!-- background-position: bottom; -->
+		
+		
+        .card-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-title {
+            transform: translateY(-5px);
+        }
+
+        /* Navigation Buttons */
+        .slider-nav {
+            position: absolute;
+            bottom: 0;
+            transform: translateY(-50%);
+            z-index: 100;
+            <!-- background: var(--text-secondary); -->
+            border: 1px solid var(--border);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+
+        .slider-nav:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .slider-nav:active {
+            transform: translateY(-50%) scale(0.95);
+        }
+
+        .nav-prev {
+            left: 1rem;
+        }
+
+        .nav-next {
+            right: 1rem;
+        }
+
+        .slider-nav svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* Indicators */
+        .slider_indicators {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0 1rem;
+        }
+
+        .indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--secondary_trans);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator.active {
+            background: var(--accent);
+            width: 24px;
+            border-radius: 4px;
+        }
+
+        .indicator:hover {
+            background: var(--text-secondary);
+        }
+
+        /* Auto-scroll Animation */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-280px * 6 - 6rem));
+            }
+        }
+
+        .slider-wrapper.auto-scroll {
+            animation: scroll 20s linear infinite;
+        }
+
+        .slider-wrapper.auto-scroll:hover {
+            animation-play-state: paused;
+        }
+
+        /* Responsive - Tablet (768px) */
+        @media (min-width: 768px) {
+            .gallery-title {
+                font-size: 2rem;
+                margin-bottom: 3rem;
+            }
+
+            .card {
+                min-width: 540px;
+            }
+
+            .card-image {
+                height: 380px;
+            }
+
+            .slider-nav {
+                width: 56px;
+                height: 56px;
+            }
+
+            .nav-prev {
+                left: 2rem;
+            }
+
+            .nav-next {
+                right: 2rem;
+            }
+        }
+
+        /* Responsive - Desktop Small (1024px) */
+        @media (min-width: 1024px) {
+            .gallery-section {
+                padding: 3rem 0;
+            }
+
+            .card {
+                min-width: 380px;
+            }
+
+            .card-image {
+                height: 420px;
+            }
+
+            .card-title {
+                font-size: 1.2rem;
+                padding: 2rem;
+            }
+
+            .slider_indicators {
+                gap: 0.75rem;
+            }
+
+            .indicator {
+                width: 10px;
+                height: 10px;
+            }
+
+            .indicator.active {
+                width: 32px;
+            }
+        }
+		
+        @media (min-width: 1280px) {
+		.hero h1 {
+                font-size: 7rem;
+            }
+			.hero-content h2,.hero-content h3 { 
+				font-size:3em;
+			}
+            .features-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* Responsive - Desktop Large (1400px) */
+        @media (min-width: 1400px) {
+            .card {
+                min-width: 420px;
+            }
+
+            .card-image {
+                height: 480px;
+                font-size: 5rem;
+            }
+
+            .card-title {
+                font-size: 1.3rem;
+            }
+        }
+		
+		<!-- SLIDER GALERIAS PRODUCTOS -->
+		.slider_container {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .slider_wrapper {
+            background-color: var(--color-white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn_sliderupSlider 0.8s ease forwards;
+        }
+
+        @keyframes fadeIn_sliderupSlider {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Slider Container */
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .slider-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+            filter: brightness(0.95);
+			
+            will-change: transform;
+        }
+
+        .slide:hover img {
+            transform: scale(1.08);
+            filter: brightness(1) contrast(1.05);
+        }
+
+        /* Overlay en hover */
+        .slide::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+            opacity: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .slide:hover::after {
+            opacity: 1;
+        }
+
+        /* Información de la imagen */
+        .slide-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+            color: white;
+            transform: translateY(100%);
+            transition: var(--transition-smooth);
+            z-index: 10;
+			
+            will-change: transform;
+        }
+
+        .slide:hover .slide-info {
+            transform: translateY(0);
+        }
+
+        .slide-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .slide-description {
+            font-size: 0.875rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        /* Botones de navegación */
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.95);
+            border: none;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 100;
+            transition: var(--transition-smooth);
+            box-shadow: var(--shadow-md);
+            opacity: 0;
+            animation: fadeIn_slider 0.6s ease 0.5s forwards;
+        }
+        @keyframes fadeIn_slider {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .slider-btn:hover {
+            background-color: var(--color-primary);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .slider-btn:hover svg {
+            stroke: white;
+        }
+
+        .slider-btn:active {
+            transform: translateY(-50%) scale(0.95);
+        }
+
+        .slider-btn.prev {
+            left: 1rem;
+        }
+
+        .slider-btn.next {
+            right: 1rem;
+        }
+
+        .slider-btn svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--color-dark);
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: var(--transition-smooth);
+        }
+
+        /* Indicadores */
+        .slider_indicators {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.5rem;
+            background-color: vtransparent;
+        }
+
+        .indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #d1d5db;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .indicator:hover {
+            background-color: #9ca3af;
+            transform: scale(1.2);
+        }
+
+        .indicator.active {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            width: 32px;
+            border-radius: 5px;
+            transform: scale(1);
+        }
+
+        .indicator.active::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border: 2px solid var(--color-primary);
+            border-radius: 8px;
+            opacity: 0.3;
+        }
+
+        /* Loading Skeleton */
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading_slider 1.5s infinite;
+        }
+
+        @keyframes loading_slider {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
+        }
+		
+        .slide.loading img {
+            opacity: 0;
+        }
+
+        .slide.loaded img {
+            opacity: 1;
+            animation: imageAppear 0.5s ease;
+        }
+
+        @keyframes imageAppear {
+            from {
+                opacity: 0;
+                transform: scale(1.1);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Contador de slides */
+        .slide-counter {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            opacity: 0;
+            animation: fadeIn_slider 0.6s ease 0.7s forwards;
+        }
+
+        /* Autoplay progress bar */
+        .autoplay-progress {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+            width: 0;
+            transition: width 0.1s linear;
+            z-index: 101;
+        }
+
+        .autoplay-progress.active {
+            animation: progressBar 5s linear;
+        }
+
+        @keyframes progressBar {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        /* Control de autoplay */
+        .autoplay-control {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 100;
+            transition: var(--transition-smooth);
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            animation: fadeIn_slider 0.6s ease 0.6s forwards;
+        }
+
+        .autoplay-control:hover {
+            background-color: rgba(255, 255, 255, 0.95);
+            transform: scale(1.1);
+        }
+
+        .autoplay-control:hover svg {
+            fill: var(--color-primary);
+        }
+		
+        .autoplay-control svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+            transition: var(--transition-smooth);
+        }
+
+        /* Responsive - Tablet */
+        @media (min-width: 640px) {
+            .slider {
+                height: 400px;
+            }
+
+            .slider-btn {
+                width: 56px;
+                height: 56px;
+            }
+
+            .slider-btn svg {
+                width: 28px;
+                height: 28px;
+            }
+
+            .slide-title {
+                font-size: 1.5rem;
+            }
+
+            .slide-description {
+                font-size: 1rem;
+            }
+        }
+
+        /* Responsive - Desktop */
+        @media (min-width: 1024px) {
+            .slider {
+                height: 500px;
+            }
+
+            body {
+                padding: 2rem;
+            }
+
+            .slider-btn.prev {
+                left: 1.5rem;
+            }
+
+            .slider-btn.next {
+                right: 1.5rem;
+            }
+
+            .indicator {
+                width: 12px;
+                height: 12px;
+            }
+
+            .indicator.active {
+                width: 40px;
+            }
+
+            .slide-info {
+                padding: 2rem;
+            }
+        }
+
+        /* Responsive - Large Desktop */
+        @media (min-width: 1280px) {
+            .slider {
+                height: 600px;
+            }
+
+            .slide-title {
+                font-size: 2rem;
+            }
+
+            .slide-description {
+                font-size: 1.125rem;
+            }
+        }
+		
+		
 
     </style>
 </head>
@@ -1229,7 +2152,7 @@
     <header class="header" id="header">
         <nav class="nav-container">
             <div class="logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-				<img class="logo_img" src="logo_icons/logo_vitra.jpg"/>
+				<img class="logo_img" src="logo_icons/logo_vitra-removebg.png"/>
 				<h1 class="logo_title">VITRA</h1>
 			</div>
             
@@ -1253,9 +2176,11 @@
 				</li>
             </ul>
 
-            <div class="nav-controls">
-                <button class="menu-toggle" id="menuToggle" aria-label="Menú">
-                    ☰
+            <div class="nav-controls">								                
+                <button class="menu_toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
             </div>
         </nav>
@@ -1341,6 +2266,24 @@
 				</div>
 			</div>
 		</section>
+		
+		<div class="gallery_Wrap">
+			<div id="galeria_container" class="galeria_container"><!-- Las imágenes se cargarán dinámicamente --></div>
+		</div>
+		<!-- Modal -->
+			<div class="modal" id="modal" onclick="closeModal(event)">
+				<div class="modal-content">
+					<button class="modal-close" onclick="closeModal()">&times;</button>
+					<img id="modal-img" src="" alt="">
+					<div class="modal-info">
+						<h3 id="modal-title"></h3>
+						<p id="modal-description"></p>
+						<p id="modal-price"></p>
+						<p id="modal-tarjeta"></p>
+					<button class="btn_product">Ver más</button>
+					</div>
+				</div>
+			</div>
 
 		<!-- Products Section -->
 		<section id="productos">
@@ -1534,10 +2477,24 @@
 						"Increíble la calidad de los lentes. Compré unos Ray-Ban que lucen como nuevos. La atención fue excelente y los precios son realmente únicos. 100% recomendado."
 					</p>
 					<div class="testimonial-author">
-						<div class="author-avatar">MC</div>
+						<div class="author-avatar">AF</div>
 						<div class="author-info">
-							<h5>María Castellanos</h5>
+							<h5>Alejandro Fleitas</h5>
 							<p>Cliente frecuente</p>
+						</div>
+					</div>
+				</div>
+				<div class="testimonial-card">
+					<div class="quote-icon">"</div>
+					<div class="stars">⭐⭐⭐⭐⭐</div>
+					<p class="testimonial-text">
+						"Gracias por conseguirme lo que buscaba tan rápido. Ya no me quedo limpiando en cas y me voy al disfrutar."
+					</p>
+					<div class="testimonial-author">
+						<div class="author-avatar">CT</div>
+						<div class="author-info">
+							<h5>Caibal Troilo</h5>
+							<p>Biker</p>
 						</div>
 					</div>
 				</div>
@@ -1548,9 +2505,9 @@
 						"Encontré los Oakley que buscaba hace meses a un precio increíble. El proceso de restauración es impecable, no se nota que son second hand. ¡Volveré seguro!"
 					</p>
 					<div class="testimonial-author">
-						<div class="author-avatar">JR</div>
+						<div class="author-avatar">MT</div>
 						<div class="author-info">
-							<h5>Javier Rodríguez</h5>
+							<h5>Marcelo Tissierre</h5>
 							<p>Deportista</p>
 						</div>
 					</div>
@@ -1562,18 +2519,70 @@
 						"Me encanta el concepto sustentable de Vitra. Compré unos Prada hermosos y me siento bien sabiendo que estoy contribuyendo al medio ambiente. Las chicas son súper atentas."
 					</p>
 					<div class="testimonial-author">
-						<div class="author-avatar">LS</div>
+						<div class="author-avatar">MM</div>
 						<div class="author-info">
-							<h5>Laura Suárez</h5>
+							<h5>María</h5>
 							<p>Diseñadora</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
+		
+		<section class="slider_productos">		
+		<h3 class="gallery-title">Galería Productos</h3>
+			<div class="slider_container">
+				<div class="slider-wrapper">
+					<div class="slider">
+						<!-- Contador de slides -->
+						<div class="slide-counter">
+							<span id="currentSlide">1</span> / <span id="totalSlides">0</span>
+						</div>
+
+						<!-- Control de autoplay -->
+						<button class="autoplay-control" id="autoplayBtn" title="Pausar autoplay">
+							<svg id="playIcon" style="display: none;" viewBox="0 0 24 24">
+								<path d="M8 5v14l11-7z"/>
+							</svg>
+							<svg id="pauseIcon" viewBox="0 0 24 24">
+								<path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+							</svg>
+						</button>
+
+						<!-- Progress bar -->
+						<div class="autoplay-progress" id="progressBar"></div>
+
+						<!-- Track de slides -->
+						<div class="slider-track" id="sliderTrack">
+							<!-- Los slides se cargarán aquí dinámicamente -->
+						</div>
+
+						<!-- Botones de navegación -->
+						<button class="slider-btn prev" id="prevBtn" aria-label="Anterior">
+							<svg viewBox="0 0 24 24" fill="none">
+								<path d="M15 18l-6-6 6-6"/>
+							</svg>
+						</button>
+						<button class="slider-btn next" id="nextBtn" aria-label="Siguiente">
+							<svg viewBox="0 0 24 24" fill="none">
+								<path d="M9 18l6-6-6-6"/>
+							</svg>
+						</button>
+					</div>
+
+					<!-- Indicadores -->
+					<div class="slider_indicators" id="indicators">
+						<!-- Los indicadores se generarán dinámicamente -->
+					</div>
+					<hr>
+				</div>
+			</div>		
+		</section>						       
+	
 	</aside>
     <!-- Contact Section -->
     <section id="contacto">
+		<h3 class="gallery-title">¿Querés ver mejor? Hablemos.</h3>
         <div class="contact-container">
             <div class="contact-info">
 					<h2 class="section-badge">¿Buscás algo único?</h2> 
@@ -1662,7 +2671,7 @@
                     <li>Y muchas más...</li>
                 </ul>
             </div>
-            <div class="footer-section">
+            <div class="footer-section footer_spanded">
                 <h3>Información Legal</h3>
                 <ul>
                     <li><a href="#">Preguntas Frecuentes</a></li>
@@ -1672,6 +2681,7 @@
                     <li><p style="color:black;text-shadow:1px 0 1px red; font-size:1em;">Clicar links de abajo para mas info del Desarrollador</p></li>            
                     <li><a href="KikiriyaDevOps.html">Garantía de Autenticidad</a></li>
                     <li><a href="disclaimer.html">Política de Privacidad</a></li>        
+                    <li><p id="parrafo_info_load"></p></li>        
                 </ul>
             </div>
         </div>
@@ -1687,6 +2697,323 @@
     </button>
 
     <script>
+	const images = [
+		{	
+			id:0001,
+            src: './imgs/lentes21.png',
+            title: 'RALPH LAUREN',
+            description: 'Diseño único con armazón original y cristal nuevo polarizado ✨',
+			precio: 4400,
+			tarjeta:null,
+			category: 'all'
+        },
+		{	
+			id:0002,
+            src: './imgs/lentes19.png',
+            title: 'LACOSTE',
+            description: 'Nuevo polarizado, con filtro 400UV para máxima protección ♻️',
+			precio: 4600,
+			tarjeta:null,
+			category: 'all'
+        },
+		{	
+			id:0003,
+            src: './imgs/lentes20.png',
+            title: 'GUESS',
+            description: 'Diseño único con armazón original y cristal nuevo polarizado ☀️',
+			precio: 3500,
+			tarjeta:null,
+			category: 'all'
+        },
+		{	
+			id:0004,
+            src: './imgs/lentes13.png',
+            title: 'Calvin Klein',
+            description: 'De sol, ♻️☀️ con filtro 400UV para máxima protección✨',
+			precio: 2600,
+			tarjeta:null,
+			category: 'all'
+        },
+		{	
+			id:0005,
+            src: './imgs/lente12.png',
+            title: 'RALPH LAUREN',
+            description: 'Diseño único con armazón original y cristal nuevo polarizado ☀️',
+			precio: 2600,
+			tarjeta:null,
+			category: 'all'
+        },
+		{	
+			id:0005,
+            src: './imgs/lente10.png',
+            title: 'VERSACE',
+            description: 'Con filtro 400UV para máxima protección.🩵 ¡ÚNICO PAR!',
+			precio: 4400,
+			tarjeta:null,
+			category: 'all'
+        },
+		{	
+			id:0006,
+            src: './imgs/lentes15.png',
+            title: 'RAYBAN',
+            description: 'Cristales nuevos polarizados 💚',
+			precio: 5200,
+			tarjeta:null,
+			category: 'all'
+        },
+		{	
+			id:0007,
+            src: './imgs/lentes17.png',
+            title: 'MYTHO',
+            description: 'Armazón original con cambio de cristales, protección UV y polarizado',
+			precio: 3700,
+			tarjeta:null,
+			category: 'all'
+        },
+		{	
+			id:0008,
+            src: './imgs/lentes16.png',
+            title: 'DIOR',
+            description: 'Cristales nuevos polarizados 💚',
+			precio: 4800,
+			tarjeta:null,
+			category: 'all'
+        },
+		{	
+			id:0009,
+            src: './imgs/lente11.png',
+            title: 'Motor Oil',
+            description: 'Diseño único con armazón original y cristal nuevo polarizado ♻️',
+			precio: 2300,
+			tarjeta:null,
+			category: 'all'
+        },{	
+			id:0010,
+            src: './imgs/lentes9.png',
+            title: 'AIRE',
+            description: 'Con filtro 400UV para máxima protección ¡Uno solo disponible!',
+			precio: 1900,
+			tarjeta:null,
+			category: 'all'
+        },
+		{	
+			id:0011,
+            src: './imgs/lentes14.png',
+            title: 'Paco Rabanne',
+            description: 'Diseño único con armazón original y cristal nuevo polarizado, 🩵 ¡Uno solo disponible!',
+			precio: 2300,
+			tarjeta:null,
+			category: 'all'
+        },
+		{	
+			id:0012,
+            src: './imgs/lentes1.png',
+            title: 'Second Hand',
+            description: 'Me re copan los emprendimientos familiares que tienen un trasfondo más allá del negocio. 💚',
+			precio: '0X0',
+			tarjeta:null,
+			category: 'all'
+        },
+		{	
+			id:0013,
+            src: './imgs/lentes8.png',
+            title: 'Giorgio Armani',
+            description: 'Diseño único con armazón original y cristal nuevo polarizado ♻️',
+			precio: 3600,
+			tarjeta:null,
+			category: 'all'
+        },{	
+			id:0014,
+            src: './imgs/lentes3.png',
+            title: 'MYTHO',
+            description: 'Con filtro 400UV para máxima protección. ♻️☀️',
+			precio: 2600,
+			tarjeta:null,
+			category: 'all'
+        },
+		{	
+			id:0015,
+            src: './imgs/lentes7.png',
+            title: 'RAYBAN',
+            description: 'Diseño único con armazón original y cristal ORIGINAL, (RB grabado en la última foto)♻️',
+			precio: 2900,
+			tarjeta:null,
+			category: 'all'
+        },
+		{	
+			id:0016,
+            src: './imgs/lente4.png',
+            title: 'NOVA',
+            description: 'Diseño único con armazón original y cristal nuevo polarizado',
+			precio: 2200,
+			tarjeta:null,
+			category: 'all'
+        },
+		{	
+			id:0017,
+            src: './imgs/lentes6.png',
+            title: 'CARRERA',
+            description: 'Filtro 400UV para máxima protección. ♻️☀️¡Solo uno en stock!',
+			precio: 2800,
+			tarjeta:null,
+			category: 'all'
+        },
+		{	
+			id:0018,
+            src: './imgs/lente2.png',
+            title: 'MORMAII',
+            description: 'Diseño único con armazón original y cristal nuevo polarizad☀️',
+			precio: 2900,
+			tarjeta:null,
+			category: 'all'
+        },
+		{	
+			id:0019,
+            src: './imgs/lentes18.png',
+            title: 'Ralph Lauren',
+            description: '☀️ ¡Uno solo disponible!',
+			precio: 3500,
+			tarjeta:null,
+			category: 'all'
+        },
+		{	
+			id:0020,
+            src: './imgs/lente5.png',
+            title: 'RAYBAN',
+            description: 'Diseño único con armazón original y cristal ORIGINAL, (RB grabado en la última foto)♻️',
+			precio: 3600,
+			tarjeta:null,
+			category: 'all'
+        }
+	];
+	
+	// Funcionalidad del modal
+    function openModal(image) {
+            const modal = document.getElementById('modal');
+            const modalImg = document.getElementById('modal-img');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDescription = document.getElementById('modal-description');
+            const modalPrice = document.getElementById('modal-price');
+            const modalTarjeta = document.getElementById('modal-tarjeta');
+            
+            modalImg.src = image.src.replace('_640.jpg', '_1280.jpg'); // Versión HD
+            modalImg.alt = image.title;
+            modalTitle.textContent = image.title;
+            modalDescription.textContent = image.description;
+            modalPrice.textContent = `$ ${image.precio}`;
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+     }
+
+        function closeModal(event) {
+            if (event && event.target !== event.currentTarget && !event.target.classList.contains('modal-close')) {
+                return;
+            }
+            
+            const modal = document.getElementById('modal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Cerrar modal con ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+		
+	 // Crear galeria y elementos de galería
+	function create_gallery(imgData,indice){
+		const fragmento = document.createDocumentFragment();
+		const gallery_card_img = document.createElement('div');
+		gallery_card_img.className = 'gallery_item cargando';
+		
+		const elemento_img = document.createElement('img');
+		
+		elemento_img.addEventListener('load', () => {
+                gallery_card_img.classList.remove('cargando');
+            });
+			
+		// Lazy loading nativo llamado desde el for anterior de imagenes
+			elemento_img.src = imgData.src;
+			elemento_img.title = imgData.title;
+			elemento_img.desc = imgData.description;
+			elemento_img.precio = imgData.precio;
+			elemento_img.id = imgData.id;
+			elemento_img.alt = imgData.title;
+			elemento_img.loading = 'lazy'; // Habilitar carga diferida nativa
+			
+			<!-- elemento_img.classList.add('imagen_clase'); -->
+			elemento_img.className ='imagen_clase';
+			<!-- elemento_img.style.width = '200px'; -->
+			<!-- elemento_img.style.margin = '5px'; -->
+						
+            const overlay = document.createElement('div');
+            overlay.className = 'gallery-overlay';
+            overlay.innerHTML = `
+                <h3>${imgData.title}</h3>
+                <p>${imgData.description.substring(0, 80)}...</p>
+            `;
+			
+		console.log("ADD"+elemento_img.title);
+		
+		 gallery_card_img.appendChild(elemento_img);
+         gallery_card_img.appendChild(overlay);
+		 
+		 // Evento click para modal
+            gallery_card_img.addEventListener('click', () => openModal(imgData));
+		
+		<!-- fragmento.appendChild(elemento_img);		 -->
+		
+		 gallery_card_img.classList.add('galery_estilizada'); 
+		<!-- gallery_card_img.appendChild(fragmento);		 -->
+            
+            return gallery_card_img;
+	}
+	
+	// Cargar galería
+        function loadGalleryDesdeJs() {
+            const gallery = document.getElementById('galeria_container');
+            
+            images.forEach((image, index) => {
+                const item = create_gallery(image, index);
+                galeria_container.appendChild(item);
+            });
+        }
+		
+	loadGalleryDesdeJs();
+	
+ // ==================================================================================
+	// INTERSECTION OBSERVER FOR ANIMATIONS
+		// Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+		
+		// Observe all elements
+        document.querySelectorAll('.feature, .product-card, .gallery_item, .about__content, .about__image-placeholder, .hero__image-placeholder').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+		       
+	
+		//galeria_container.appendChild(elemento_img);
+		
+		//========================================================================================
+	
         // Theme Toggle
         const themeToggle = document.getElementById('themeToggle');
         const html = document.documentElement;
@@ -1699,7 +3026,7 @@
             const theme = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
             html.setAttribute('data-theme', theme);
             localStorage.setItem('theme', theme);
-            themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+            <!-- themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙'; -->
         });
 
         // Mobile Menu Toggle
@@ -1708,7 +3035,10 @@
 
         menuToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
+			
+            menuToggle.classList.toggle('active');
         });
+		
 
         // Close menu when clicking on a link
         const navLinks = navMenu.querySelectorAll('a');
@@ -1716,6 +3046,8 @@
             link.addEventListener('click', () => {
                 if (window.innerWidth < 768) {
                     navMenu.classList.remove('active');
+					
+                menuToggle.classList.remove('active');
                 }
             });
         });
@@ -1724,11 +3056,13 @@
         document.addEventListener('click', (e) => {
             if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
                 navMenu.classList.remove('active');
+                menuToggle.classList.remove('active');
             }
         });
 		
 		 navMenu.addEventListener('click', (e) => {
 			navMenu.classList.remove('active');
+                menuToggle.classList.remove('active');
 		 });
 
         // Header scroll effect
@@ -1768,7 +3102,6 @@
                 behavior: 'smooth'				
             });
 			
-				console.log(window.pageYOffset);
         });
 
         // Smooth scroll for all anchor links
@@ -1785,28 +3118,6 @@
             });
         });
 
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all cards and sections
-        document.querySelectorAll('.feature-card, .product-card, .testimonial-card, .process-step').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
 
         // Form validation (if you add a contact form later)
         const validateEmail = (email) => {
@@ -1832,11 +3143,17 @@
         window.addEventListener('load', () => {
             const loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
             console.log(`Página cargada en ${loadTime}ms`);
+			const parrafo_info_load = document.getElementById('parrafo_info_load');
+			parrafo_info_load.style.fontStyle = "italic"; 
+			parrafo_info_load.style.fontFamily = 'Comfortaa';
+			parrafo_info_load.style.fontSize = '.8em';
+			parrafo_info_load.style.color = 'var(--accent)';
+			parrafo_info_load.textContent=`(Página cargada en ${loadTime}ms)`;
         });
 
         // Easter egg - konami code
         let konamiCode = [];
-        const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+        const konamiSequence = ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
         
         document.addEventListener('keydown', (e) => {
             konamiCode.push(e.key);
@@ -1931,6 +3248,312 @@
             });
         });
 
+		//*********************************************************************************//
+		//-------------------------nuevo slider productos --------------------
+		const imagesData = [
+            {
+                id: 1,
+                url: 'imgs/lentes (6).jpg',
+                title: 'No es personal… bueno, un poco sí.',
+                description: 'Disfrutemos el momento'
+            },
+            {
+                id: 2,
+                url: 'imgs/lentes (3).jpg',
+                title: 'Únicos como vos',
+                description: 'Tranquilidad para lo que sea'
+            },
+            {
+                id: 3,
+                url: 'imgs/lentes21.png',
+                title: 'Estoy acá!',
+                description: 'Slow fashion, fast look'
+            },
+            {
+                id: 4,
+                url: 'imgs/lentes (2).jpg',
+                title: 'Elegí con sentido',
+                description: 'Lentes que viajan, inspiran y siguen brillando'
+            },
+            {
+                id: 5,
+                url: 'imgs/lentes (1).jpg',
+                title: 'Sunset at sea',
+                description: 'Imperdibles de vacaiones'
+            },
+            {
+                id: 6,
+                url: 'imgs/lentes (4).jpg',
+                title: 'Brilliant mind',
+                description: 'Nueva coleccion para niñ@s'
+            }
+        ];
+
+        // Variables del slider
+        let currentIndex = 0;
+        let autoplayInterval;
+        let isAutoplayActive = true;
+        const autoplayDelay = 5000; // 5 segundos
+
+        // Elementos del DOM
+        const sliderTrack = document.getElementById('sliderTrack');
+        const indicatorsContainer = document.getElementById('indicators');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const currentSlideSpan = document.getElementById('currentSlide');
+        const totalSlidesSpan = document.getElementById('totalSlides');
+        const autoplayBtn = document.getElementById('autoplayBtn');
+        const playIcon = document.getElementById('playIcon');
+        const pauseIcon = document.getElementById('pauseIcon');
+        const progressBar = document.getElementById('progressBar');
+
+        // Función para crear slides
+        function createSlides() {
+            totalSlidesSpan.textContent = imagesData.length;
+
+            imagesData.forEach((image, index) => {
+                // Crear slide
+                const slide = document.createElement('div');
+                slide.className = 'slide loading';
+                
+                const img = document.createElement('img');
+                img.alt = image.title;
+                
+                // Lazy loading con intersection observer
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            img.src = image.url;
+                            img.onload = () => {
+                                slide.classList.remove('loading');
+                                slide.classList.add('loaded');
+                            };
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                observer.observe(slide);
+
+                // Información de la imagen
+                const slideInfo = document.createElement('div');
+                slideInfo.className = 'slide-info';
+                slideInfo.innerHTML = `
+                    <div class="slide-title">${image.title}</div>
+                    <div class="slide-description">${image.description}</div>
+                `;
+
+                slide.appendChild(img);
+                slide.appendChild(slideInfo);
+                sliderTrack.appendChild(slide);
+
+                // Crear indicador
+                const indicator = document.createElement('button');
+                indicator.className = 'indicator';
+                indicator.setAttribute('aria-label', `Ir a slide ${index + 1}`);
+                if (index === 0) indicator.classList.add('active');
+                
+                indicator.addEventListener('click', () => {
+                    goToSlide(index);
+                    resetAutoplay();
+                });
+
+                indicatorsContainer.appendChild(indicator);
+            });
+
+            // Precargar primera imagen
+            const firstSlide = sliderTrack.querySelector('.slide');
+            const firstImg = firstSlide.querySelector('img');
+            firstImg.src = imagesData[0].url;
+            firstImg.onload = () => {
+                firstSlide.classList.remove('loading');
+                firstSlide.classList.add('loaded');
+            };
+        }
+
+        // Función para ir a un slide específico
+        function goToSlide(index) {
+            if (index < 0) {
+                currentIndex = imagesData.length - 1;
+            } else if (index >= imagesData.length) {
+                currentIndex = 0;
+            } else {
+                currentIndex = index;
+            }
+
+            const offset = -currentIndex * 100;
+            sliderTrack.style.transform = `translateX(${offset}%)`;
+
+            // Actualizar indicadores
+            const indicators = indicatorsContainer.querySelectorAll('.indicator');
+            indicators.forEach((indicator, i) => {
+                indicator.classList.toggle('active', i === currentIndex);
+            });
+
+            // Actualizar contador
+            currentSlideSpan.textContent = currentIndex + 1;
+
+            // Precargar imagen del slide actual si no está cargada
+            const currentSlide = sliderTrack.children[currentIndex];
+            const currentImg = currentSlide.querySelector('img');
+            if (!currentImg.src) {
+                currentImg.src = imagesData[currentIndex].url;
+                currentImg.onload = () => {
+                    currentSlide.classList.remove('loading');
+                    currentSlide.classList.add('loaded');
+                };
+            }
+
+            // Precargar siguiente imagen
+            const nextIndex = (currentIndex + 1) % imagesData.length;
+            const nextSlide = sliderTrack.children[nextIndex];
+            const nextImg = nextSlide.querySelector('img');
+            if (!nextImg.src) {
+                nextImg.src = imagesData[nextIndex].url;
+                nextImg.onload = () => {
+                    nextSlide.classList.remove('loading');
+                    nextSlide.classList.add('loaded');
+                };
+            }
+
+            // Reiniciar barra de progreso
+            progressBar.style.animation = 'none';
+            setTimeout(() => {
+                progressBar.style.animation = '';
+                if (isAutoplayActive) {
+                    progressBar.classList.add('active');
+                }
+            }, 10);
+        }
+
+        // Función para siguiente slide
+        function nextSlide() {
+            goToSlide(currentIndex + 1);
+        }
+
+        // Función para slide anterior
+        function prevSlide() {
+            goToSlide(currentIndex - 1);
+        }
+
+        // Autoplay
+        function startAutoplay() {
+            if (autoplayInterval) clearInterval(autoplayInterval);
+            autoplayInterval = setInterval(nextSlide, autoplayDelay);
+            isAutoplayActive = true;
+            playIcon.style.display = 'none';
+            pauseIcon.style.display = 'block';
+            progressBar.classList.add('active');
+        }
+
+        function stopAutoplay() {
+            if (autoplayInterval) clearInterval(autoplayInterval);
+            isAutoplayActive = false;
+            playIcon.style.display = 'block';
+            pauseIcon.style.display = 'none';
+            progressBar.classList.remove('active');
+        }
+
+        function resetAutoplay() {
+            if (isAutoplayActive) {
+                stopAutoplay();
+                startAutoplay();
+            }
+        }
+
+        // Toggle autoplay
+        autoplayBtn.addEventListener('click', () => {
+            if (isAutoplayActive) {
+                stopAutoplay();
+            } else {
+                startAutoplay();
+            }
+        });
+
+        // Event listeners
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetAutoplay();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetAutoplay();
+        });
+
+        // Navegación con teclado
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                prevSlide();
+                resetAutoplay();
+            } else if (e.key === 'ArrowRight') {
+                nextSlide();
+                resetAutoplay();
+            }
+        });
+
+        // Touch/swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        sliderTrack.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        sliderTrack.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            if (touchStartX - touchEndX > swipeThreshold) {
+                nextSlide();
+                resetAutoplay();
+            } else if (touchEndX - touchStartX > swipeThreshold) {
+                prevSlide();
+                resetAutoplay();
+            }
+        }
+
+        // Pausar autoplay cuando el usuario está inactivo
+        let inactivityTimer;
+        function resetInactivityTimer() {
+            clearTimeout(inactivityTimer);
+            inactivityTimer = setTimeout(() => {
+                if (!isAutoplayActive) {
+                    startAutoplay();
+                }
+            }, 5000); // 5 segundos de inactividad
+        }
+
+        document.addEventListener('mousemove', resetInactivityTimer);
+        document.addEventListener('keydown', resetInactivityTimer);
+
+        // Inicializar slider
+        function initSlider() {
+            createSlides();
+            startAutoplay();
+            goToSlide(0);
+        }
+
+        // Iniciar cuando el DOM esté listo
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initSlider);
+        } else {
+            initSlider();
+        }
+		
+		
+		/// termina slider y galeria
+
+        // Ajustar en resize
+        window.addEventListener('resize', () => {
+            updateSlider(false);
+        });
+
+        // Inicializar
+        updateIndicators();
         // Service Worker registration for PWA (optional)
         
         <!-- if ('serviceWorker' in navigator) { -->
@@ -2078,6 +3701,13 @@
 
         // Console easter egg
         setTimeout(() => {
+		
+			const anchoBody = document.body.offsetWidth;
+			const anchoWindow = window.pageYOffset;
+			
+				console.log("anchoWindow"+anchoWindow);
+			console.log(`ancho body ${anchoBody}`);
+			
             console.log('%c💼 ¿Buscas un sitio para tus ideas?', 'color:orange;font-size: 16px; font-weight: bold;');
             console.log(' %cEnvía tu mail a: www.kikiriyadevops@gmail.com', ' color:orange; font-size: 14px;');
             console.log('%c📞: 094872605', 'color:orange;font-size: 14px;');
